@@ -1,1 +1,11 @@
-SUBSYSTEMS=="usb", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f508", MODE="0660", TAG+="uaccess"
+# Pulsar X2V2 Mini Mouse udev rules
+# Allows users to access the mouse via USB
+
+# Wired connection
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f507", MODE="0666", TAG+="uaccess"
+
+# Wireless dongle (1kHz)
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f508", MODE="0666", TAG+="uaccess"
+
+# Wireless dongle (4kHz) - if applicable
+SUBSYSTEMS=="usb", ATTRS{idVendor}=="3554", ATTRS{idProduct}=="f509", MODE="0666", TAG+="uaccess"

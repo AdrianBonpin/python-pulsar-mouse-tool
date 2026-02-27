@@ -547,6 +547,14 @@ class Device:
         data = self.device.read(self.endpoint, self.length, 0)
         return data.tobytes()
 
+    def clear_read_buffer(self):
+        """Clear any stale data from the read buffer"""
+        try:
+            while True:
+                self.device.read(self.endpoint, self.length, 1)
+        except Exception:
+            pass
+
     def read(self, expect=None):
         while True:
             resp = self._read()
@@ -609,6 +617,7 @@ class PulsarX2V2Mini:
         self._profile = None
 
     def get_power(self):
+        self.dev.clear_read_buffer()
         payload = build_payload(Command.POWER)
         self.dev.write(payload)
         while True:

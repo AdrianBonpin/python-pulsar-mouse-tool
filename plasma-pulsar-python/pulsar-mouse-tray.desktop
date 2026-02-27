@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Pulsar Mouse Tray
+Comment=Pulsar X2V2 Mini mouse settings and battery monitor
+Exec=/usr/bin/python3 /home/adrianbonpin/.local/share/plasma-pulsar/pulsar_tray.py
+Icon=input-mouse
+Type=Application
+Categories=System;HardwareSettings;
+StartupNotify=false
+Terminal=false
+X-GNOME-Autostart-enabled=true
